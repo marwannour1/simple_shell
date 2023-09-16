@@ -18,6 +18,7 @@ ssize_t getUserInput(char **input, size_t *buffer_size, int status);
 int isBuiltin(char **args);
 void prompt(void);
 char **tokenisation(char *str, char *delimiter);
+char **new_tokenisation(char **str);
 
 
 #endif

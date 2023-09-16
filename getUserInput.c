@@ -18,4 +18,5 @@ ssize_t getUserInput(char **input, size_t *buffer_size, int status)
         perror("failed to get the input");
         exit(status);
     }
-
+    return (0);
+}

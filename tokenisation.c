@@ -13,7 +13,7 @@
 
      token = strtok(str, delimiter);
      while (token)
-    {
+     {
 		ret = realloc(arrayOfStrings, sizeof(char *) * (i + 1));
 		if (arrayOfStrings == NULL)
 			return (NULL);
@@ -25,7 +25,7 @@
 		strcpy(arrayOfStrings[i], token);
 		token = strtok(NULL, delim);
 		i++;
-	}
+     }
 	/*increase the size of the array*/
 	ret = realloc(arrayOfStrings, (i + 1) * sizeof(char *));
 	if (!arrayOfStrings)
@@ -34,6 +34,3 @@
 	arrayOfStrings[i] = NULL;
 	return (arrayOfStrings);
 }
-
- }
-
