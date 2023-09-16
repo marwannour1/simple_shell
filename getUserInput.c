@@ -9,9 +9,10 @@
  */
 ssize_t getUserInput(char **input, size_t *buffer_size, int status)
 {
-    prompt();
+    ssize_t characters_read;
 
-    ssize_t characters_read = getline(input, buffer_size, stdin);
+    prompt();
+    characters_read = getline(input, buffer_size, stdin);
 
     if (characters_read == -1)
     {

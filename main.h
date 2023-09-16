@@ -10,10 +10,7 @@
 #include <sys/stat.h>
 
 int _env();
-int _excute(char *command, char **array_of_tokens);
-int _exit(char **args);
-void allocateStringMemory(char **arrayOfStrings, size_t strSize, str *errorMessage);
-void allocateArrayMemory(char **arrayOfStrings, size_t strSize, str *errorMessage);
+int _excute(char **array_of_tokens);
 ssize_t getUserInput(char **input, size_t *buffer_size, int status);
 int isBuiltin(char **args);
 void prompt(void);

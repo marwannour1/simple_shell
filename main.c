@@ -20,4 +20,5 @@ int main(void)
 		if (!isBuiltin(command_tokenized))
 			ret = _excute(command_tokenized);
 	}
+	return (ret);
 }

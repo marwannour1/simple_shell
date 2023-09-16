@@ -10,6 +10,7 @@
      char *token = NULL;
      char **arrayOfStrings = NULL;
      int i = 0;
+     int ret;
 
      token = strtok(str, delimiter);
      while (token)

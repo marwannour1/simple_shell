@@ -8,7 +8,7 @@
   */
 char **new_tokenisation(char **str)
 {
-	char *args[] = str;
+	char **args = str;
 	char *prefix = "/bin/";
 	unsigned int len_str = strlen(*args);
 	unsigned int len_prefix = strlen(prefix);
