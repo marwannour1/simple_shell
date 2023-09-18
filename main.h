@@ -11,7 +11,7 @@
 
 int _env();
 int _excute(char **array_of_tokens);
-ssize_t getUserInput(char **input, size_t *buffer_size, int status);
+ssize_t getUserInput(char **input);
 int isBuiltin(char **args);
 void prompt(void);
 char **tokenisation(char *str, char *delimiter);

@@ -10,12 +10,11 @@
      char *token = NULL;
      char **arrayOfStrings = NULL;
      int i = 0;
-     int ret;
 
      token = strtok(str, delimiter);
      while (token)
      {
-		ret = realloc(arrayOfStrings, sizeof(char *) * (i + 1));
+		arrayOfStrings = realloc(arrayOfStrings, sizeof(char *) * (i + 1));
 		if (arrayOfStrings == NULL)
 			return (NULL);
 
@@ -24,11 +23,11 @@
 			return (NULL);
 
 		strcpy(arrayOfStrings[i], token);
-		token = strtok(NULL, delim);
+		token = strtok(NULL, delimiter);
 		i++;
      }
 	/*increase the size of the array*/
-	ret = realloc(arrayOfStrings, (i + 1) * sizeof(char *));
+	arrayOfStrings = realloc(arrayOfStrings, (i + 1) * sizeof(char *));
 	if (!arrayOfStrings)
 		return (NULL);
 

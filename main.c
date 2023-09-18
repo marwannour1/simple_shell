@@ -7,18 +7,18 @@
   */
 int main(void)
 {
-	char *input = NULL;
-	size_t buffer_size;
-	char **command_tokenized;
-	int ret;
+	char *buffer = NULL;
+	char **arrayOfStrings;
 
-	while (true)
+	getUserInput(&buffer);
+	arrayOfStrings = tokenisation(buffer, " ");
+
+	while (*arrayOfStrings)
 	{
-		getUserInput(&input, &buffer_size, 1);
-		command_tokenized = tokenisation(input, " ");
-		command_tokenized = new_tokenisation(commnad);
-		if (!isBuiltin(command_tokenized))
-			ret = _excute(command_tokenized);
+		printf("token: %s\n", *arrayOfStrings);
+		arrayOfStrings++;
 	}
-	return (ret);
+		
+	free(buffer);
+	return (0);
 }
