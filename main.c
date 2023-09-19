@@ -5,19 +5,26 @@
   *
   * Return: always 0 on success and 1 on failure
   */
-int main(void)
+int main(int argc, char **argv, char **env)
 {
 	char *buffer = NULL;
 	char **arrayOfStrings;
+	char **temp;
 
+	(void)argv;
+	(void)argc;
+	prompt();
 	getUserInput(&buffer);
+	printf("%s", buffer);
 	arrayOfStrings = tokenisation(buffer, " ");
-
-	while (*arrayOfStrings)
+	temp = arrayOfStrings;
+	while (*temp)
 	{
-		printf("token: %s\n", *arrayOfStrings);
-		arrayOfStrings++;
+		printf("%s\n", *temp);
+		temp++;
 	}
+
+	execve(arrayOfStrings[0], arrayOfStrings, env);
 		
 	free(buffer);
 	return (0);

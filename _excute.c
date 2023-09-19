@@ -7,10 +7,10 @@
  *
  * Return: return description
  */
-int _excute(char **array_of_tokens)
+int _excute(char **array_of_tokens, char **environ)
 {
 	pid_t pid;
-	int status, is_execve_error;
+	int status, is_execve_error = 0;
 
 	pid = fork();
 	if (pid == -1)
@@ -20,14 +20,14 @@ int _excute(char **array_of_tokens)
 	}
 	if (pid == 0)
 	{
-		is_execve_error = execve(array_of_tokens[0], array_of_tokens, __environ);
+		is_execve_error = execve(array_of_tokens[0], array_of_tokens, environ);
 		if (is_execve_error == -1)
 		{
 			perror("unable to excute");
 			return (-1);
 		}
 	}
-	else
+	else if (pid > 0)
 	{
 		wait(&status);
 		if (WIFEXITED(status))
@@ -38,4 +38,3 @@ int _excute(char **array_of_tokens)
 	}
 	return (0);
 }
-

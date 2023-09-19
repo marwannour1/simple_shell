@@ -10,7 +10,7 @@
 #include <sys/stat.h>
 
 int _env();
-int _excute(char **array_of_tokens);
+int _excute(char **array_of_tokens, char **env);
 ssize_t getUserInput(char **input);
 int isBuiltin(char **args);
 void prompt(void);

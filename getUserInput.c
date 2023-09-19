@@ -11,7 +11,6 @@ ssize_t getUserInput(char **input)
     ssize_t characters_read;
     size_t buffer_size;
 
-    prompt();
     characters_read = getline(input, &buffer_size, stdin);
 
     if (characters_read == -1)

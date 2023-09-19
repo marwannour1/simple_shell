@@ -30,7 +30,6 @@
 	arrayOfStrings = realloc(arrayOfStrings, (i + 1) * sizeof(char *));
 	if (!arrayOfStrings)
 		return (NULL);
-
 	arrayOfStrings[i] = NULL;
 	return (arrayOfStrings);
 }

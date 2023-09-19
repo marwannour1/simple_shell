@@ -16,13 +16,12 @@ char **new_tokenisation(char **str)
 
         if (!result)
 		return (0);
-	if ((strstr(args[0], "/bin/")) != NULL)
+	if ((strstr(args[0], prefix)) == NULL)
 	{
         strcpy(result, prefix);
         strcat(result, *args);
         args[0] = result;
 	}
-	free(result);
 
 	return (args);
 }
