@@ -12,40 +12,30 @@ int main(int argc, char **argv, char **env)
 
 	if(isatty(STDIN_FILENO))
 	{
-		(void)argv;
-		(void)argc;
-		while (1)
-		{
-		prompt();
-		getUserInput(&buffer);
+	(void)argv;
+	(void)argc;
+	while (1)
+	{
+	prompt();
+	getUserInput(&buffer);
 	
-		arrayOfStrings = tokenisation(buffer, " ");
-		arrayOfStrings = new_tokenisation(arrayOfStrings);
+	arrayOfStrings = tokenisation(buffer, " ");
+	arrayOfStrings = new_tokenisation(arrayOfStrings);
 
-		isBuiltin(arrayOfStrings);
-		_excute(arrayOfStrings, env);
-		}
-		free(buffer);
-		_free(arrayOfStrings);
-		return (0);
+	_excute(arrayOfStrings, env);
+	}
+	free(buffer);
 	}
 	else
 	{
-		if (argc < 2)
-	       	{
-            		fprintf(stderr, "Usage: %s command [args...]\n", argv[0]);
-            		return 1;
-        	}
+		(void)argc;
 
-        
-        	arrayOfStrings = tokenisation(argv[1], " ");
-        	arrayOfStrings = new_tokenisation(arrayOfStrings);
-        if (arrayOfStrings != NULL)
-       	{
-            _excute(arrayOfStrings, env);
-            _free(arrayOfStrings);
-        }
+		argv++;
+		arrayOfStrings = new_tokenisation(argv);
+		_excute(arrayOfStrings, env);
 
-        return 0;
-    }
 	}
+	free_memory(arrayOfStrings);
+
+	return (0);
+}
