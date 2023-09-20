@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * myExit - couses normal process termination
- * @args: empty args
+ *myExit - couses normal process termination
+ *@args: empty args
  *
- * Return: 0 to terminate the process
+ *Return: 0 to terminate the process
  */
 int myExit(char **args)
 {
