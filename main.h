@@ -17,6 +17,8 @@ void prompt(void);
 char **tokenisation(char *str, char *delimiter);
 char **new_tokenisation(char **str);
 void myExit(char **args);
+int free_memory(char **arrayOfStrings);
+void _free(char **array_tokens);
 
 
 #endif

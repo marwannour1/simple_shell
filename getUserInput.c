@@ -15,6 +15,7 @@ ssize_t getUserInput(char **input)
 
     if (len == -1)
     {
+	free(*input);
         perror("failed to get the input");
         exit(-1);
     }

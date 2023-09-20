@@ -7,13 +7,12 @@
  *
  * Return: void
  */
-void _free(char **array_tokens, char *input)
+void _free(char **array_tokens)
 {
 	int index;
 
 	for (index = 0; array_tokens[index]; index++)
 		free(array_tokens[index]);
 	free(array_tokens);
-	free(input);
 }
 
