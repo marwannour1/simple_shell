@@ -4,7 +4,7 @@
  *
  * Return: pointer that points the the read line
  */
-char *read_stream(void)
+char *readStream(void)
 {
     char *line = NULL;
     size_t bufsize = 0;

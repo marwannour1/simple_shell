@@ -12,13 +12,13 @@ void shell_no_interactive(void)
  int status = -1;
 
  do {
-  line = read_stream();
-  args = split_line(line); /* tokenize line */
-  status = execute_args(args);
-  /* avoid memory leaks */
+  line = readStream();
+  args = lineParser(line);
+  status = executeProgram(args);
+  
   free(line);
   free(args);
-  /* exit with status */
+  
   if (status >= 0)
   {
    exit(status);

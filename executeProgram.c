@@ -6,15 +6,15 @@
  *
  * Return: 1 on sucess, 0 otherwise
  */
-int execute_args(char **args)
+int executeProgram(char **args)
 {
  char *builtin_func_list[] = {
   "env",
   "exit"
  };
  int (*builtin_func[])(char **) = {
-  &own_env,
-  &own_exit
+  &myEnv,
+  &myExit
  };
 unsigned long int i = 0;
 

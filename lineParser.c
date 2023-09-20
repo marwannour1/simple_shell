@@ -6,7 +6,7 @@
  *
  * Return: pointer that points to the new array
  */
-char **split_line(char *line)
+char **lineParser(char *line)
 {
  int bufsize = 64;
  int i = 0;
