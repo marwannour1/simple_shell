@@ -9,22 +9,17 @@ int main(int argc, char **argv, char **env)
 {
 	char *buffer = NULL;
 	char **arrayOfStrings;
-	char **temp;
 
 	(void)argv;
 	(void)argc;
 	prompt();
 	getUserInput(&buffer);
-	printf("%s", buffer);
+	
 	arrayOfStrings = tokenisation(buffer, " ");
-	temp = arrayOfStrings;
-	while (*temp)
-	{
-		printf("%s\n", *temp);
-		temp++;
-	}
+	arrayOfStrings = new_tokenisation(arrayOfStrings);
 
-	execve(arrayOfStrings[0], arrayOfStrings, env);
+	_excute(arrayOfStrings, env);
+	
 		
 	free(buffer);
 	return (0);
