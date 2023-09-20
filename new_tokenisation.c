@@ -15,7 +15,9 @@ char **new_tokenisation(char **str)
 	char *result = malloc(len_prefix + len_str + 1);
 
         if (!result)
-		return (0);
+	{
+		return (NULL);
+	}
 	if ((strstr(args[0], prefix)) == NULL)
 	{
         strcpy(result, prefix);

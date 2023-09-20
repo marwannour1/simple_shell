@@ -16,12 +16,16 @@
      {
 		arrayOfStrings = realloc(arrayOfStrings, sizeof(char *) * (i + 1));
 		if (arrayOfStrings == NULL)
+		{
+			_free(arrayOfStrings);
 			return (NULL);
-
+		}
 		arrayOfStrings[i] = malloc(strlen(token) + 1);
 		if (!(arrayOfStrings[i]))
+		{
+			_free(arrayOfStrings);
 			return (NULL);
-
+		}
 		strcpy(arrayOfStrings[i], token);
 		token = strtok(NULL, delimiter);
 		i++;
@@ -29,7 +33,10 @@
 	/*increase the size of the array*/
 	arrayOfStrings = realloc(arrayOfStrings, (i + 1) * sizeof(char *));
 	if (!arrayOfStrings)
+	{
+		_free(arrayOfStrings);
 		return (NULL);
+	}
 	arrayOfStrings[i] = NULL;
 	return (arrayOfStrings);
 }

@@ -9,6 +9,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
+extern char **environ;
 int _env();
 int _excute(char **array_of_tokens, char **env);
 ssize_t getUserInput(char **input);
@@ -17,7 +18,6 @@ void prompt(void);
 char **tokenisation(char *str, char *delimiter);
 char **new_tokenisation(char **str);
 void myExit(char **args);
-int free_memory(char **arrayOfStrings);
 void _free(char **array_tokens);
 
 

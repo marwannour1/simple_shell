@@ -35,7 +35,7 @@ int main(int argc, char **argv, char **env)
 		_excute(arrayOfStrings, env);
 
 	}
-	free_memory(arrayOfStrings);
+	_free(arrayOfStrings);
 
 	return (0);
 }
