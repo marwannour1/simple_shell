@@ -10,8 +10,6 @@ int main(int argc, char **argv, char **env)
 	char *buffer = NULL;
 	char **arrayOfStrings;
 
-	if(isatty(STDIN_FILENO))
-	{
 	(void)argv;
 	(void)argc;
 	while (1)
@@ -25,16 +23,6 @@ int main(int argc, char **argv, char **env)
 	_excute(arrayOfStrings, env);
 	}
 	free(buffer);
-	}
-	else
-	{
-		(void)argc;
-
-		argv++;
-		arrayOfStrings = new_tokenisation(argv);
-		_excute(arrayOfStrings, env);
-
-	}
 	_free(arrayOfStrings);
 
 	return (0);
