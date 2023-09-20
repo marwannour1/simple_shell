@@ -1,15 +1,21 @@
 #include "main.h"
 
 /**
- * myExit - exit to end
- * @args: command array
+ * own_exit - couses normal process termination
+ * @args: empty args
  *
- * Return: 0 if failure 1 if success
+ * Return: 0 to terminate the process
  */
-void myExit(char **args)
+int own_exit(char **args)
 {
-	if (args[1] != NULL)
-		exit(atoi(args[1]));
+	/* exit with status */
+	if (args[1])
+	{
+		return (atoi(args[1]));
+	}
+	/* exit success */
 	else
-		exit(1);
+	{
+		return (0);
+	}
 }

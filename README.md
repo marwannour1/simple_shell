@@ -1,1 +1,0 @@
-ALX Simple shell project

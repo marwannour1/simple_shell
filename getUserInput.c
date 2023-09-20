@@ -1,28 +1,28 @@
 #include "main.h"
+
 /**
- * getUserInput - get the input from the user
- * @input: pointer to the input buffer
- * @status: the exit status
+ * read_line - read a line from stdin
  *
- * Return: -1 on failure, 0 on success
+ * Return: pointer that points to a str with the line content
  */
-ssize_t getUserInput(char **input)
+char *read_line(void)
 {
-    ssize_t len;
-    size_t buffer_size;
+ char *line = NULL;
+ size_t bufsize = 0;
 
-    len = getline(input, &buffer_size, stdin);
-
-    if (len == -1)
-    {
-	free(*input);
-        perror("failed to get the input");
-        exit(-1);
-    }
-    if (len > 0 && (*input)[len - 1] == '\n')
-    {
-	    (*input)[len - 1] = '\0';
-    }
-
-    return (0);
+ if (getline(&line, &bufsize, stdin) == -1) /* if getline fails */
+ {
+  if (feof(stdin)) /* test for the eof */
+  {
+   free(line); /* avoid memory leaks when ctrl + d */
+   exit(EXIT_SUCCESS); /* we recieved an eof */
+  }
+  else
+  {
+   free(line); /* avoid memory leaks when getline fails */
+   perror("error while reading the line from stdin");
+   exit(EXIT_FAILURE);
+  }
+ }
+ return (line);
 }
