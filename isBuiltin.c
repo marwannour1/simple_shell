@@ -10,7 +10,7 @@ int isBuiltin(char **args)
 	if (!args[0])
 		return (0);
 	if (!strcmp(args[0], "exit"))
-		_exit(args);
+		myExit(args);
 	else if (!strcmp(args[0], "env"))
 		_env();
 	else

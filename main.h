@@ -16,6 +16,7 @@ int isBuiltin(char **args);
 void prompt(void);
 char **tokenisation(char *str, char *delimiter);
 char **new_tokenisation(char **str);
+void myExit(char **args);
 
 
 #endif

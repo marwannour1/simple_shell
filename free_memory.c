@@ -14,4 +14,6 @@ int free_memory(char **arrayOfStrings)
 		free(*arrayOfStrings);
 		arrayOfStrings++;
 	}
+	free(arrayOfStrings);
+	return(0);
 }

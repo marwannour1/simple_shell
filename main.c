@@ -12,6 +12,8 @@ int main(int argc, char **argv, char **env)
 
 	(void)argv;
 	(void)argc;
+	while (1)
+	{
 	prompt();
 	getUserInput(&buffer);
 	
@@ -19,8 +21,7 @@ int main(int argc, char **argv, char **env)
 	arrayOfStrings = new_tokenisation(arrayOfStrings);
 
 	_excute(arrayOfStrings, env);
-	
-		
+	}
 	free(buffer);
 	return (0);
 }
