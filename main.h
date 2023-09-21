@@ -17,7 +17,6 @@ char **lineParser(char *line);
 int executeProgram(char **args);
 
 int new_process(char **args);
-char** checkAndAddPrefix(char** strings);
 char *readStream(void);
 
 int myExit(char **args);
