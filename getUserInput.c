@@ -3,27 +3,27 @@
 /**
  *getUserInput - read a line from stdin
  *
- *Return: pointer that points to a str with the line content
+ *Return: pointer that points to a str with the input content
  */
 char *getUserInput(void)
 {
-	char *line = NULL;
+	char *input = NULL;
 	size_t bufsize = 0;
 
-	if (getline(&line, &bufsize, stdin) == -1) /*if getline fails */
+	if (getline(&input, &bufsize, stdin) == -1) /*if getinput fails */
 	{
 		if (feof(stdin)) /*test for the eof */
 		{
-			free(line); /*avoid memory leaks when ctrl + d */
+			free(input); /*avoid memory leaks when ctrl + d */
 			exit(EXIT_SUCCESS); /*we recieved an eof */
 		}
 		else
 		{
-			free(line); /*avoid memory leaks when getline fails */
-			perror("error while reading the line from stdin");
+			free(input); /*avoid memory leaks when getinput fails */
+			perror("error while reading the input from stdin");
 			exit(EXIT_FAILURE);
 		}
 	}
 
-	return (line);
+	return (input);
 }

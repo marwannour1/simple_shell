@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- *shell_interactive - UNIX command line interpreter
+ *interactiveMode - UNIX command line interpreter
  *
  *Return: void
  */
-void shell_interactive(void)
+void interactiveMode(void)
 {
 	char *line;
 	char **args;

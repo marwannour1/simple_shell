@@ -9,19 +9,19 @@ char *readStream(void)
 {
 	char *line = NULL;
 	size_t bufsize = 0;
-	ssize_t characters_read;
+	ssize_t inputLen;
 
-	characters_read = getline(&line, &bufsize, stdin);
+	inputLen = getline(&line, &bufsize, stdin);
 
-	if (characters_read == -1)
+	if (inputLen == -1)
 	{
 		free(line);
 		exit(EXIT_SUCCESS);
 	}
 
-	if (characters_read > 0 && line[characters_read - 1] == '\n')
+	if (inputLen > 0 && line[inputLen - 1] == '\n')
 	{
-		line[characters_read - 1] = '\0';
+		line[inputLen - 1] = '\0';
 	}
 
 	return (line);

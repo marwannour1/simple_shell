@@ -8,10 +8,10 @@
  */
 int executeProgram(char **args)
 {
-	char *builtin_func_list[] = { "env",
+	char *builtinFunctionList[] = { "env",
 		"exit" };
 
-	int(*builtin_func[])(char **) = { &myEnv, &myExit
+	int(*builtinFunction[])(char **) = { &myEnv, &myExit
 	};
 
 	unsigned long int i = 0;
@@ -21,11 +21,11 @@ int executeProgram(char **args)
 		return (-1);
 	}
 
-	for (; i < sizeof(builtin_func_list) / sizeof(char *); i++)
+	for (; i < sizeof(builtinFunctionList) / sizeof(char *); i++)
 	{
-		if (strcmp(args[0], builtin_func_list[i]) == 0)
+		if (strcmp(args[0], builtinFunctionList[i]) == 0)
 		{
-			return ((*builtin_func[i])(args));
+			return ((*builtinFunction[i])(args));
 		}
 	}
 

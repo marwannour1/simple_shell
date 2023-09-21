@@ -17,15 +17,15 @@ int new_process(char **args)
 		/*child process */
 		if (execvp(args[0], args) == -1)
 		{
-			perror("error in new_process: child process");
+			perror("error in child process");
 		}
 
 		exit(EXIT_FAILURE);
 	}
 	else if (pid < 0)
 	{
-		/*error forking */
-		perror("error in new_process: forking");
+
+		perror("error in forking");
 	}
 	else
 	{
